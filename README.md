@@ -1,4 +1,4 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19942761&assignment_repo_type=AssignmentRepo)
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19915099&assignment_repo_type=AssignmentRepo)
 # Testing and Debugging MERN Applications
 
 This assignment focuses on implementing comprehensive testing strategies for a MERN stack application, including unit testing, integration testing, and end-to-end testing, along with debugging techniques.
@@ -86,3 +86,25 @@ Your work will be automatically submitted when you push to your GitHub Classroom
 - [Supertest Documentation](https://github.com/visionmedia/supertest)
 - [Cypress Documentation](https://docs.cypress.io/)
 - [MongoDB Testing Best Practices](https://www.mongodb.com/blog/post/mongodb-testing-best-practices) 
+
+
+bug
+
+curl -X POST http://localhost:5000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"testuser","password":"password123"}'
+{"user":{"id":"686e6b12106d03256ad2874f","username":"testuser"},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NmU2YjEyMTA2ZDAzMjU2YWQyODc0ZiIsImlhdCI6MTc1MjQ4ODYyMCwiZXhwIjoxNzU1MDgwNjIwfQ.FDUbo39UpNjspsW3GIwEuRsf2ZDLCmhPbzQKE0Ft_PY"}@Jepkosgei3 ➜ /workspaces/week-6-test-debug-assignment-Jepkosgei3/server (main) curl -X POST http://localhost:5000/api/bugs \ \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NmU2YjEyMTA2ZDAzMjU2YWQyODc0ZiIsImlhdCI6MTc1MjQ4ODYyMCwiZXhwIjoxNzU1MDgwNjIwfQ.FDUbo39UpNjspsW3GIwEuRsf2ZDLCmhPbzQKE0Ft_PY" \
+  -d '{"title":"Login fails", "description":"Login fails on Safari", "status":"open"}'
+{"title":"Login fails","description":"Login fails on Safari","status":"open","createdBy":"686e6b12106d03256ad2874f","_id":"6874dad9c3e19c9c5f3c5b85","createdAt":"2025-07-14T10:24:25.549Z","updatedAt":"202curl -X GET http://localhost:5000/api/bugs \ /workspaces/week-6-test-debug-assignment-Jepkosgei3/server (main) $ curl -X GET http://localhost:5000/api/bugs \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NmU2YjEyMTA2ZDAzMjU2YWQyODc0ZiIsImlhdCI6MTc1MjQ4ODYyMCwiZXhwIjoxNzU1MDgwNjIwfQ.FDUbo39UpNjspsW3GIwEuRsf2ZDLCmhPbzQKE0Ft_PY"
+[{"_id":"6874dad9c3e19c9c5f3c5b85","title":"Login fails","description":"Login fails on Safari","status":"open","createdBy":{"_id":"686e6b12106d03256ad2874f","username":"testuser"},"createdAt":"2025-07-14T10:24:25.549Z","updatedAt":"2025-07-14T1
+@Jepkosgei3 ➜ /workspaces/week-6-test-debug-assignment-Jepkosgei3/server (main) $ curl -X PUT http://localhost:5000/api/bugs/6874dad9c3e19c9c5f3c5b85 \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NmU2YjEyMTA2ZDAzMjU2YWQyODc0ZiIsImlhdCI6MTc1MjQ4ODYyMCwiZXhwIjoxNzU1MDgwNjIwfQ.FDUbo39UpNjspsW3GIwEuRsf2ZDLCmhPbzQKE0Ft_PY" \
+  -d '{"status":"resolved"}'
+{"_id":"6874dad9c3e19c9c5f3c5b85","title":"Login fails","description":"Login fails on Safari","status":"resolved","createdBy":{"_id":"686e6b12106d03256ad2874f","username":"testuser"},"createdAt":"2025-07-14T10:24:25.549Z","updatedAt":"2025-07-14T10:26:50.670Z","__v":0}@Jepkosgei3 ➜ /workspaces/week-6-test-debug-assignment-Jepkosgei3/server (main) $ 
+@Jepkosgei3 ➜ /workspaces/week-6-test-debug-assignment-Jepkosgei3/server (main) $ curl -X DELETE http://localhost:5000/api/bugs/6874dad9c3e19c9c5f3c5b85 \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NmU2YjEyMTA2ZDAzMjU2YWQyODc0ZiIsImlhdCI6MTc1MjQ4ODYyMCwiZXhwIjoxNzU1MDgwNjIwfQ.FDUbo39UpNjspsW3GIwEuRsf2ZDLCmhPbzQKE0Ft_PY"
+{"message":"Bug removed"}@Jepkosgei3 ➜ /workspaces/week-6-test-debug-assignment-Jepkosgei3/server (main) $ 
